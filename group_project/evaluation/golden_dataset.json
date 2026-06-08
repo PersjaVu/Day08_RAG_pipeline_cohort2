@@ -1,17 +1,82 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Bộ luật Hình sự?",
+    "expected_answer": "Tội tàng trữ trái phép chất ma tuý được quy định tại Điều 249 Bộ luật Hình sự 2015 (sửa đổi 2017). Người phạm tội có thể bị phạt tù từ 1 năm đến chung thân tuỳ khối lượng và loại chất ma tuý; mức khởi điểm phạt tù từ 1 đến 5 năm.",
+    "expected_context": ["Điều 249. Tội tàng trữ trái phép chất ma túy", "Bộ luật Hình sự 2015 sửa đổi 2017"]
   },
   {
-    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "question": "Các hành vi bị nghiêm cấm theo Luật Phòng, chống ma tuý 2021 là gì?",
+    "expected_answer": "Điều 5 Luật Phòng, chống ma tuý 2021 nghiêm cấm các hành vi như: trồng cây có chứa chất ma tuý; sản xuất, tàng trữ, vận chuyển, mua bán, sử dụng trái phép chất ma tuý, tiền chất; tổ chức, lôi kéo, cưỡng bức người khác sử dụng trái phép chất ma tuý.",
+    "expected_context": ["Điều 5. Các hành vi bị nghiêm cấm", "Luật Phòng, chống ma túy 2021"]
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "question": "Tội mua bán trái phép chất ma tuý bị xử lý như thế nào?",
+    "expected_answer": "Tội mua bán trái phép chất ma tuý quy định tại Điều 251 Bộ luật Hình sự, có khung hình phạt từ 2 năm tù đến tù chung thân hoặc tử hình tuỳ khối lượng, loại chất và tình tiết tăng nặng.",
+    "expected_context": ["Điều 251. Tội mua bán trái phép chất ma túy"]
+  },
+  {
+    "question": "Tội tổ chức sử dụng trái phép chất ma tuý được quy định ở điều nào?",
+    "expected_answer": "Tội tổ chức sử dụng trái phép chất ma tuý được quy định tại Điều 255 Bộ luật Hình sự 2015, với hình phạt tù từ 2 năm đến tù chung thân tuỳ tính chất, mức độ và hậu quả.",
+    "expected_context": ["Điều 255. Tội tổ chức sử dụng trái phép chất ma túy"]
+  },
+  {
+    "question": "Cai nghiện ma tuý tự nguyện được thực hiện ở đâu?",
+    "expected_answer": "Theo Luật Phòng, chống ma tuý 2021, cai nghiện ma tuý tự nguyện được thực hiện tại gia đình, cộng đồng hoặc tại cơ sở cai nghiện ma tuý công lập, ngoài công lập.",
+    "expected_context": ["cai nghiện ma túy tự nguyện", "Luật Phòng, chống ma túy 2021"]
+  },
+  {
+    "question": "Đối tượng nào bị áp dụng biện pháp cai nghiện ma tuý bắt buộc?",
+    "expected_answer": "Người nghiện ma tuý từ đủ 18 tuổi trở lên bị áp dụng biện pháp cai nghiện bắt buộc khi thuộc các trường hợp luật định, ví dụ không đăng ký/không thực hiện cai nghiện tự nguyện, hoặc tái nghiện trong thời gian quản lý sau cai nghiện.",
+    "expected_context": ["cai nghiện ma túy bắt buộc", "từ đủ 18 tuổi"]
+  },
+  {
+    "question": "Chất ma tuý được định nghĩa như thế nào theo pháp luật Việt Nam?",
+    "expected_answer": "Theo Luật Phòng, chống ma tuý 2021, chất ma tuý là chất gây nghiện, chất hướng thần được quy định trong danh mục chất ma tuý do Chính phủ ban hành.",
+    "expected_context": ["chất ma túy là chất gây nghiện, chất hướng thần", "danh mục chất ma túy"]
+  },
+  {
+    "question": "Trách nhiệm của gia đình trong phòng, chống ma tuý là gì?",
+    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định gia đình có trách nhiệm giáo dục thành viên, quản lý, hỗ trợ người nghiện cai nghiện và hoà nhập cộng đồng, đồng thời phối hợp với cơ quan chức năng trong phòng, chống ma tuý.",
+    "expected_context": ["trách nhiệm của gia đình", "Luật Phòng, chống ma túy 2021"]
+  },
+  {
+    "question": "Tội sản xuất trái phép chất ma tuý có khung hình phạt ra sao?",
+    "expected_answer": "Tội sản xuất trái phép chất ma tuý quy định tại Điều 248 Bộ luật Hình sự, có khung hình phạt từ 2 năm tù đến tù chung thân hoặc tử hình tuỳ khối lượng và tình tiết.",
+    "expected_context": ["Điều 248. Tội sản xuất trái phép chất ma túy"]
+  },
+  {
+    "question": "Người sử dụng trái phép chất ma tuý được quản lý như thế nào?",
+    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định việc lập danh sách và quản lý người sử dụng trái phép chất ma tuý tại nơi cư trú, do Uỷ ban nhân dân cấp xã thực hiện trong thời hạn nhất định để phòng ngừa và hỗ trợ.",
+    "expected_context": ["quản lý người sử dụng trái phép chất ma túy", "Ủy ban nhân dân cấp xã"]
+  },
+  {
+    "question": "Ca sĩ Châu Việt Cường bị đề nghị mức án bao nhiêu năm tù?",
+    "expected_answer": "Ca sĩ Châu Việt Cường bị đề nghị mức án khoảng 13-14 năm tù trong vụ án liên quan đến ma tuý dẫn đến cái chết của một cô gái.",
+    "expected_context": ["Châu Việt Cường", "13-14 năm tù"]
+  },
+  {
+    "question": "Những nghệ sĩ Việt nào từng dính líu tới ma tuý?",
+    "expected_answer": "Một số nghệ sĩ Việt từng dính líu tới ma tuý được báo chí đưa tin, trong đó nổi bật là Châu Việt Cường; các vụ việc gây chú ý dư luận về vấn đề ma tuý trong giới nghệ sĩ.",
+    "expected_context": ["nghệ sĩ Việt", "ma túy", "showbiz"]
+  },
+  {
+    "question": "Vấn đề ma tuý trong showbiz Việt được nhìn nhận như thế nào?",
+    "expected_answer": "Báo chí nhìn nhận ma tuý trong showbiz là vấn đề nghiêm trọng, kêu gọi sự thanh lọc bắt đầu từ chính nghệ sĩ và tăng cường trách nhiệm, ý thức của người nổi tiếng.",
+    "expected_context": ["ma túy và showbiz", "thanh lọc", "nghệ sĩ"]
+  },
+  {
+    "question": "Tiền chất ma tuý là gì?",
+    "expected_answer": "Tiền chất là hoá chất không thể thiếu trong quá trình sản xuất chất ma tuý, được quy định trong danh mục tiền chất do Chính phủ ban hành và chịu sự kiểm soát của pháp luật.",
+    "expected_context": ["tiền chất", "danh mục tiền chất"]
+  },
+  {
+    "question": "Hợp tác quốc tế trong phòng, chống ma tuý gồm những nội dung gì?",
+    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định hợp tác quốc tế trên nguyên tắc tôn trọng độc lập, chủ quyền, bình đẳng, cùng có lợi; bao gồm trao đổi thông tin, đào tạo, hỗ trợ kỹ thuật và phối hợp đấu tranh phòng, chống tội phạm ma tuý.",
+    "expected_context": ["hợp tác quốc tế", "phòng, chống ma túy"]
+  },
+  {
+    "question": "Người nghiện ma tuý có bị coi là tội phạm không?",
+    "expected_answer": "Người nghiện ma tuý không đương nhiên bị coi là tội phạm; họ được xác định là người bệnh cần cai nghiện. Tuy nhiên các hành vi như tàng trữ, mua bán, tổ chức sử dụng trái phép chất ma tuý mới cấu thành tội phạm theo Bộ luật Hình sự.",
+    "expected_context": ["người nghiện ma túy", "cai nghiện", "Bộ luật Hình sự"]
   }
 ]
