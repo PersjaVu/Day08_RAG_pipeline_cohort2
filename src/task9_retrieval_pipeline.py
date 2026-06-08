@@ -46,6 +46,11 @@ def retrieve(
     dense_results = semantic_search(query, top_k=candidates_per_ranker)
     sparse_results = lexical_search(query, top_k=candidates_per_ranker)
 
+    # Lưu lại cosine similarity tốt nhất từ semantic search (thang [0,1]) để
+    # quyết định fallback. KHÔNG dùng score sau RRF vì đó là điểm RRF (~0.016),
+    # khác thang đo → so với threshold [0,1] sẽ luôn sai.
+    best_semantic_score = dense_results[0]["score"] if dense_results else 0.0
+
     for item in dense_results:
         item.setdefault("source", "semantic")
     for item in sparse_results:
@@ -66,12 +71,12 @@ def retrieve(
     else:
         final_results = merged[:top_k]
 
-    # Step 4: Fallback nếu best score dưới ngưỡng
-    top_score = final_results[0]["score"] if final_results else 0.0
-    if top_score < score_threshold:
+    # Step 4: Fallback nếu chất lượng semantic match quá thấp.
+    # Dùng best_semantic_score (cosine [0,1]) — đúng thang với threshold.
+    if best_semantic_score < score_threshold:
         print(
-            f"  [pipeline] Top score {top_score:.3f} < threshold {score_threshold} "
-            f"— falling back to PageIndex"
+            f"  [pipeline] Best semantic score {best_semantic_score:.3f} < threshold "
+            f"{score_threshold} — falling back to PageIndex"
         )
         fallback = pageindex_search(query, top_k=top_k)
         if fallback:

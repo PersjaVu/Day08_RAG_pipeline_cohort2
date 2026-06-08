@@ -36,9 +36,18 @@ def convert_legal_docs():
             print(f"  Converting: {filepath.name}")
             try:
                 result = md.convert(str(filepath))
+                text = result.text_content or ""
+                # PDF scan (ảnh, không có text layer) → MarkItDown trích ra rỗng.
+                # Không ghi file rỗng vì nó vô dụng cho chunking và làm fail test.
+                if len(text.strip()) < 200:
+                    print(
+                        f"    [SKIP] {filepath.name}: chỉ trích được {len(text.strip())} chars "
+                        f"(có thể là PDF scan, cần OCR) — bỏ qua"
+                    )
+                    continue
                 output_path = output_dir / f"{filepath.stem}.md"
-                output_path.write_text(result.text_content, encoding="utf-8")
-                print(f"    [OK] {output_path.name} ({len(result.text_content):,} chars)")
+                output_path.write_text(text, encoding="utf-8")
+                print(f"    [OK] {output_path.name} ({len(text):,} chars)")
                 converted += 1
             except Exception as exc:
                 print(f"    [FAIL] {filepath.name}: {exc}")

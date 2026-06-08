@@ -8,8 +8,9 @@ Lựa chọn kỹ thuật:
     - chunk_overlap=100: ~12% overlap để không đứt đoạn câu quan trọng
     - separator=["\n\n","\n",". "," ",""]: ưu tiên xuống dòng trước khi cắt giữa câu
 
-  Embedding: BAAI/bge-m3
-    - 1024 dim, multilingual (tiếng Việt tốt), top leaderboard MTEB
+  Embedding: paraphrase-multilingual-MiniLM-L12-v2
+    - 384 dim, multilingual (tiếng Việt tốt), nhẹ ~470MB
+    - Load & encode nhanh ~5x so với bge-m3 → pipeline không treo
     - Mô hình cục bộ, không cần API, miễn phí
 
   Vector Store: ChromaDB (persistent local)
@@ -23,10 +24,17 @@ Cài đặt:
 import json
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Load HF_TOKEN từ .env → huggingface_hub dùng để tải bge-m3 nhanh & ổn định hơn
+# (tránh rate-limit của request ẩn danh khiến download stall ở 0 byte).
+load_dotenv()
+
 STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
 CHROMA_DIR = Path(__file__).parent.parent / "data" / "vectorstore" / "chroma"
 CORPUS_JSON = STANDARDIZED_DIR / "chunks.json"
 COLLECTION_NAME = "drug_docs"
+
 
 # chunk_size=800: văn bản pháp luật tiếng Việt có câu dài, cần đủ ngữ cảnh
 CHUNK_SIZE = 800
@@ -34,9 +42,11 @@ CHUNK_SIZE = 800
 CHUNK_OVERLAP = 100
 CHUNKING_METHOD = "recursive"
 
-# BAAI/bge-m3: model đa ngôn ngữ tốt nhất cho tiếng Việt, 1024 dim
-EMBEDDING_MODEL = "BAAI/bge-m3"
-EMBEDDING_DIM = 1024
+# paraphrase-multilingual-MiniLM-L12-v2: model đa ngôn ngữ nhẹ (~470MB, 384 dim).
+# Chọn vì: hỗ trợ tiếng Việt tốt, load vào RAM & encode nhanh ~5x so với bge-m3
+# (2.27GB) → test/pipeline chạy nhanh, không treo. Không cần prefix query/passage.
+EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_DIM = 384
 
 VECTOR_STORE = "chromadb"
 
@@ -90,14 +100,14 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
 
 
 def get_embedding_model():
-    """Load BAAI/bge-m3 một lần, cache ở module level."""
+    """Load embedding model (multilingual MiniLM) một lần."""
     from sentence_transformers import SentenceTransformer
     return SentenceTransformer(EMBEDDING_MODEL)
 
 
 def embed_chunks(chunks: list[dict], model=None) -> list[dict]:
     """
-    Embed toàn bộ chunks bằng BAAI/bge-m3.
+    Embed toàn bộ chunks bằng embedding model đa ngôn ngữ.
 
     Returns:
         chunks với key 'embedding' được thêm vào mỗi item.

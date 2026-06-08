@@ -1,0 +1,23 @@
+# Secrets — KHÔNG commit key thật
+.env
+.env copy.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# LƯU Ý: data/vectorstore/ và data/standardized/chunks.json được CỐ Ý commit
+# để test (Task 5/6/9) pass ngay khi clone mà không phải chạy lại Task 4.
+# Nếu muốn repo gọn, bỏ comment 2 dòng dưới và chạy `python src/task4_chunking_indexing.py`.
+# data/vectorstore/
+# data/standardized/chunks.json
+
+# Models / cache
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store

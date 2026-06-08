@@ -12,7 +12,8 @@ _collection = None  # lazy-loaded
 
 CHROMA_DIR = Path(__file__).parent.parent / "data" / "vectorstore" / "chroma"
 COLLECTION_NAME = "drug_docs"
-EMBEDDING_MODEL = "BAAI/bge-m3"
+# Phải khớp model đã index ở Task 4 (cùng không gian vector).
+EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 
 def _get_model():
