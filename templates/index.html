@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LawAI — Trợ lý pháp luật</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <button class="icon-btn" id="toggleSidebar" title="Thu gọn">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </button>
+        <span class="brand" id="brandText">
+          <span class="brand-mark">⚖️</span> LawAI
+        </span>
+      </div>
+
+      <button class="new-chat" id="newChat">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="label">Cuộc trò chuyện mới</span>
+      </button>
+
+      <button class="nav-item" id="searchChats">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="label">Tìm kiếm cuộc trò chuyện</span>
+      </button>
+
+      <div class="history-list" id="historyList"></div>
+
+      <div class="sidebar-bottom">
+        <div class="user">
+          <div class="avatar">B</div>
+          <span class="label user-name">Bảo Vũ</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="toggleSidebarMobile" title="Menu">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </button>
+        <span class="topbar-title">LawAI</span>
+        <div class="model-pill" title="Mô hình đang dùng">Gemini 2.5 Flash</div>
+      </header>
+
+      <!-- Greeting (hiện khi chưa có tin nhắn) -->
+      <section class="greeting" id="greeting">
+        <h1 class="greeting-text">Chào Bảo, bạn cần tư vấn pháp luật gì?</h1>
+      </section>
+
+      <!-- Khung hội thoại -->
+      <section class="chat" id="chat"></section>
+
+      <!-- Ô nhập -->
+      <div class="composer-wrap">
+        <div class="composer">
+          <button class="icon-btn" id="plusBtn" title="Thêm">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <textarea id="input" rows="1" placeholder="Hỏi LawAI"></textarea>
+          <div class="composer-right">
+            <span class="model-select">Gemini 2.5 Flash</span>
+            <button class="icon-btn send-btn" id="sendBtn" title="Gửi">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 12l16-8-8 16-2-6-6-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="disclaimer">LawAI có thể đưa ra thông tin chưa chính xác. Hãy kiểm chứng với văn bản pháp luật gốc.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -25,14 +25,14 @@ rank-bm25>=0.2.2               # Task 6 - BM25
 # Task 8 - PageIndex
 pageindex>=0.1.0
 
-# Task 10 - Generation
+# Task 10 - Generation (LLM: Gemini 2.5 Flash ưu tiên, OpenAI fallback)
+google-generativeai>=0.7.0
 openai>=1.30.0
-# google-generativeai>=0.5.0  # Alternative: Gemini
 
-# Group project - UI
-streamlit>=1.35.0
-# gradio>=4.30.0         # Alternative
-# chainlit>=1.0.0        # Alternative for chatbot
+# Group project - UI (LawAI chatbot dùng Flask)
+flask>=3.0.0
+# streamlit>=1.35.0      # Alternative
+# chainlit>=1.0.0        # Alternative
 
 # Group project - Evaluation (choose one)
 deepeval>=1.0.0

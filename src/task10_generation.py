@@ -43,6 +43,11 @@ Rules:
 - If context is insufficient, say so clearly
 - Structure your answer with clear paragraphs"""
 
+# LLM provider: ưu tiên Gemini 2.5 Flash (miễn phí, nhanh) nếu có GEMINI_API_KEY,
+# fallback sang OpenAI nếu chỉ có OPENAI_API_KEY.
+GEMINI_MODEL = "gemini-2.5-flash"
+OPENAI_MODEL = "gpt-4o-mini"
+
 
 # =============================================================================
 # Document Reordering (tránh lost in the middle)
@@ -90,9 +95,41 @@ def format_context(chunks: list[dict]) -> str:
 # Generation
 # =============================================================================
 
+def _call_gemini(user_message: str) -> str:
+    """Sinh câu trả lời bằng Gemini 2.5 Flash."""
+    import google.generativeai as genai
+
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"))
+    model = genai.GenerativeModel(GEMINI_MODEL, system_instruction=SYSTEM_PROMPT)
+    resp = model.generate_content(
+        user_message,
+        generation_config={"temperature": TEMPERATURE, "top_p": TOP_P},
+    )
+    return resp.text
+
+
+def _call_openai(user_message: str) -> str:
+    """Sinh câu trả lời bằng OpenAI (fallback)."""
+    from openai import OpenAI
+
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    response = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_message},
+        ],
+        temperature=TEMPERATURE,
+        top_p=TOP_P,
+    )
+    return response.choices[0].message.content
+
+
 def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     """
     End-to-end RAG generation có citation.
+
+    LLM: ưu tiên Gemini 2.5 Flash (GEMINI_API_KEY), fallback OpenAI (OPENAI_API_KEY).
 
     Returns:
         {
@@ -101,19 +138,17 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
             'retrieval_source': str   # 'hybrid' hoặc 'pageindex'
         }
     """
-    api_key = os.getenv("OPENAI_API_KEY", "")
-    if not api_key:
+    has_gemini = bool(os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"))
+    has_openai = bool(os.getenv("OPENAI_API_KEY"))
+    if not (has_gemini or has_openai):
         return {
-            "answer": "OPENAI_API_KEY chưa được set trong .env. Hãy thêm key và thử lại.",
+            "answer": "Chưa cấu hình GEMINI_API_KEY (hoặc OPENAI_API_KEY) trong .env. "
+                      "Hãy thêm key và thử lại.",
             "sources": [],
             "retrieval_source": "none",
         }
 
-    from openai import OpenAI
-
-    client = OpenAI(api_key=api_key)
-
-    # Step 1: Retrieve
+    # Step 1: Retrieve (Task 9)
     chunks = retrieve(query, top_k=top_k)
 
     # Step 2: Reorder (lost-in-the-middle prevention)
@@ -125,18 +160,12 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     # Step 4: Build prompt
     user_message = f"Context:\n{context}\n\n---\n\nQuestion: {query}"
 
-    # Step 5: Call LLM
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_message},
-        ],
-        temperature=TEMPERATURE,
-        top_p=TOP_P,
-    )
+    # Step 5: Call LLM (Gemini ưu tiên, OpenAI fallback)
+    if has_gemini:
+        answer = _call_gemini(user_message)
+    else:
+        answer = _call_openai(user_message)
 
-    answer = response.choices[0].message.content
     retrieval_src = chunks[0].get("source", "hybrid") if chunks else "none"
 
     return {
