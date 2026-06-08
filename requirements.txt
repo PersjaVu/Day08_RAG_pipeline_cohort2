@@ -5,18 +5,19 @@ requests>=2.31.0
 # Task 2 - Crawling
 crawl4ai>=0.3.0
 
-# Task 3 - Document conversion
-markitdown>=0.1.0
+# Task 3 - Document conversion (cần [pdf] để trích text từ PDF)
+markitdown[pdf]>=0.1.0
 
 # Task 4 - Chunking & Indexing
 langchain-text-splitters>=0.2.0
-sentence-transformers>=2.2.0
-weaviate-client>=4.5.0
-# chromadb>=0.4.0        # Alternative
-# faiss-cpu>=1.7.4       # Alternative
+sentence-transformers>=2.2.0   # dùng paraphrase-multilingual-MiniLM-L12-v2 (nhẹ, đa ngôn ngữ)
+chromadb>=0.4.0                # vector store đang dùng (local, không cần Docker)
+# weaviate-client>=4.5.0       # Alternative (hybrid search built-in, cần Docker/Cloud)
+# faiss-cpu>=1.7.4             # Alternative (chỉ dense)
 
-# Task 6 - BM25
-rank-bm25>=0.2.2
+# Task 5/6/7 - search & rerank
+numpy>=1.24.0
+rank-bm25>=0.2.2               # Task 6 - BM25
 
 # Task 7 - Reranking (choose one)
 # transformers>=4.40.0   # For local reranker models

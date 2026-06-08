@@ -18,7 +18,13 @@ Gợi ý văn bản:
     - Nghị định 57/2022/NĐ-CP về danh mục chất ma tuý
 """
 
+import io
+import sys
 from pathlib import Path
+
+# Fix Windows console encoding để in tiếng Việt không crash (cp1252)
+if isinstance(sys.stdout, io.TextIOWrapper):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "legal"
 
@@ -26,7 +32,7 @@ DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "legal"
 def setup_directory():
     """Tạo thư mục data/landing/legal/ nếu chưa có."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"✓ Thư mục đã sẵn sàng: {DATA_DIR}")
+    print(f"[OK] Thư mục đã sẵn sàng: {DATA_DIR}")
 
 
 # TODO: Tải file PDF/DOCX về DATA_DIR
