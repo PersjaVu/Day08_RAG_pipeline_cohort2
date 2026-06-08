@@ -1,82 +1,128 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Bộ luật Hình sự?",
-    "expected_answer": "Tội tàng trữ trái phép chất ma tuý được quy định tại Điều 249 Bộ luật Hình sự 2015 (sửa đổi 2017). Người phạm tội có thể bị phạt tù từ 1 năm đến chung thân tuỳ khối lượng và loại chất ma tuý; mức khởi điểm phạt tù từ 1 đến 5 năm.",
-    "expected_context": ["Điều 249. Tội tàng trữ trái phép chất ma túy", "Bộ luật Hình sự 2015 sửa đổi 2017"]
+    "id": "Q01",
+    "category": "legal_criminal",
+    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự 2015 là gì?",
+    "expected_answer": "Theo Điều 249 BLHS 2015, tội tàng trữ trái phép chất ma tuý bị phạt tù từ 1 đến 5 năm ở mức cơ bản. Nếu có tổ chức, tái phạm nguy hiểm hoặc khối lượng lớn thì phạt tù từ 5-10 năm. Khối lượng rất lớn: 10-15 năm. Trường hợp đặc biệt nghiêm trọng: 15-20 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
   },
   {
-    "question": "Các hành vi bị nghiêm cấm theo Luật Phòng, chống ma tuý 2021 là gì?",
-    "expected_answer": "Điều 5 Luật Phòng, chống ma tuý 2021 nghiêm cấm các hành vi như: trồng cây có chứa chất ma tuý; sản xuất, tàng trữ, vận chuyển, mua bán, sử dụng trái phép chất ma tuý, tiền chất; tổ chức, lôi kéo, cưỡng bức người khác sử dụng trái phép chất ma tuý.",
-    "expected_context": ["Điều 5. Các hành vi bị nghiêm cấm", "Luật Phòng, chống ma túy 2021"]
+    "id": "Q02",
+    "category": "legal_criminal",
+    "question": "Tội sản xuất trái phép chất ma tuý (Điều 248) bị xử lý như thế nào?",
+    "expected_answer": "Điều 248 BLHS 2015 quy định tội sản xuất trái phép chất ma tuý bị phạt tù từ 2-7 năm ở mức cơ bản. Trường hợp có tổ chức hoặc khối lượng lớn: 7-15 năm. Khối lượng rất lớn: 15-20 năm. Trường hợp đặc biệt nghiêm trọng: 20 năm, chung thân hoặc tử hình.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 248"
   },
   {
-    "question": "Tội mua bán trái phép chất ma tuý bị xử lý như thế nào?",
-    "expected_answer": "Tội mua bán trái phép chất ma tuý quy định tại Điều 251 Bộ luật Hình sự, có khung hình phạt từ 2 năm tù đến tù chung thân hoặc tử hình tuỳ khối lượng, loại chất và tình tiết tăng nặng.",
-    "expected_context": ["Điều 251. Tội mua bán trái phép chất ma túy"]
+    "id": "Q03",
+    "category": "legal_criminal",
+    "question": "Tội mua bán trái phép chất ma tuý theo Điều 251 có thể bị xử lý tử hình không?",
+    "expected_answer": "Có, theo Điều 251 BLHS 2015, tội mua bán trái phép chất ma tuý trong trường hợp đặc biệt nghiêm trọng có thể bị tử hình. Mức cơ bản: phạt tù 2-7 năm. Có tổ chức hoặc tái phạm nguy hiểm: 7-15 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 251"
   },
   {
-    "question": "Tội tổ chức sử dụng trái phép chất ma tuý được quy định ở điều nào?",
-    "expected_answer": "Tội tổ chức sử dụng trái phép chất ma tuý được quy định tại Điều 255 Bộ luật Hình sự 2015, với hình phạt tù từ 2 năm đến tù chung thân tuỳ tính chất, mức độ và hậu quả.",
-    "expected_context": ["Điều 255. Tội tổ chức sử dụng trái phép chất ma túy"]
+    "id": "Q04",
+    "category": "legal_criminal",
+    "question": "Tội trồng cây có chứa chất ma tuý (Điều 247) bị xử lý thế nào?",
+    "expected_answer": "Theo Điều 247 BLHS 2015, người trồng cây thuốc phiện, cây cần sa hoặc cây chứa chất ma tuý đã được giáo dục nhiều lần mà còn vi phạm bị phạt tù 6 tháng đến 3 năm. Trường hợp có tổ chức hoặc quy mô lớn: phạt tù 3-7 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 247"
   },
   {
-    "question": "Cai nghiện ma tuý tự nguyện được thực hiện ở đâu?",
-    "expected_answer": "Theo Luật Phòng, chống ma tuý 2021, cai nghiện ma tuý tự nguyện được thực hiện tại gia đình, cộng đồng hoặc tại cơ sở cai nghiện ma tuý công lập, ngoài công lập.",
-    "expected_context": ["cai nghiện ma túy tự nguyện", "Luật Phòng, chống ma túy 2021"]
+    "id": "Q05",
+    "category": "legal_criminal",
+    "question": "Điều 255 quy định gì về tội sử dụng trái phép chất ma tuý?",
+    "expected_answer": "Điều 255 BLHS 2015 quy định người sử dụng trái phép chất ma tuý đã bị xử phạt hành chính mà còn tái phạm bị phạt tù 3 tháng đến 2 năm. Tái phạm từ 2 lần trở lên: phạt tù 2-5 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 255"
   },
   {
-    "question": "Đối tượng nào bị áp dụng biện pháp cai nghiện ma tuý bắt buộc?",
-    "expected_answer": "Người nghiện ma tuý từ đủ 18 tuổi trở lên bị áp dụng biện pháp cai nghiện bắt buộc khi thuộc các trường hợp luật định, ví dụ không đăng ký/không thực hiện cai nghiện tự nguyện, hoặc tái nghiện trong thời gian quản lý sau cai nghiện.",
-    "expected_context": ["cai nghiện ma túy bắt buộc", "từ đủ 18 tuổi"]
+    "id": "Q06",
+    "category": "legal_prevention",
+    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
+    "expected_answer": "Luật Phòng chống ma tuý 2021 quy định các hình thức cai nghiện gồm: cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện bắt buộc.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 28, Điều 29"
   },
   {
-    "question": "Chất ma tuý được định nghĩa như thế nào theo pháp luật Việt Nam?",
-    "expected_answer": "Theo Luật Phòng, chống ma tuý 2021, chất ma tuý là chất gây nghiện, chất hướng thần được quy định trong danh mục chất ma tuý do Chính phủ ban hành.",
-    "expected_context": ["chất ma túy là chất gây nghiện, chất hướng thần", "danh mục chất ma túy"]
+    "id": "Q07",
+    "category": "legal_prevention",
+    "question": "Thời gian cai nghiện bắt buộc theo Luật PCMT 2021 là bao lâu?",
+    "expected_answer": "Theo Luật Phòng chống ma tuý 2021, thời gian cai nghiện bắt buộc tại cơ sở cai nghiện bắt buộc là từ 12 tháng đến 24 tháng.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 29"
   },
   {
-    "question": "Trách nhiệm của gia đình trong phòng, chống ma tuý là gì?",
-    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định gia đình có trách nhiệm giáo dục thành viên, quản lý, hỗ trợ người nghiện cai nghiện và hoà nhập cộng đồng, đồng thời phối hợp với cơ quan chức năng trong phòng, chống ma tuý.",
-    "expected_context": ["trách nhiệm của gia đình", "Luật Phòng, chống ma túy 2021"]
+    "id": "Q08",
+    "category": "legal_prevention",
+    "question": "Thời gian cai nghiện tự nguyện tối thiểu là bao lâu?",
+    "expected_answer": "Theo Luật Phòng chống ma tuý 2021, thời gian cai nghiện tự nguyện tại cơ sở cai nghiện tối thiểu là 6 tháng.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 28"
   },
   {
-    "question": "Tội sản xuất trái phép chất ma tuý có khung hình phạt ra sao?",
-    "expected_answer": "Tội sản xuất trái phép chất ma tuý quy định tại Điều 248 Bộ luật Hình sự, có khung hình phạt từ 2 năm tù đến tù chung thân hoặc tử hình tuỳ khối lượng và tình tiết.",
-    "expected_context": ["Điều 248. Tội sản xuất trái phép chất ma túy"]
+    "id": "Q09",
+    "category": "legal_prevention",
+    "question": "Nghị định 105/2021/NĐ-CP quy định thời gian quản lý người sử dụng trái phép tại gia đình là bao lâu?",
+    "expected_answer": "Theo Nghị định 105/2021/NĐ-CP, người sử dụng trái phép chất ma tuý được giao cho gia đình quản lý trong thời gian không quá 30 ngày trong khi xem xét quyết định áp dụng biện pháp cai nghiện.",
+    "expected_context": "Nghị định 105/2021/NĐ-CP, Điều 8"
   },
   {
-    "question": "Người sử dụng trái phép chất ma tuý được quản lý như thế nào?",
-    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định việc lập danh sách và quản lý người sử dụng trái phép chất ma tuý tại nơi cư trú, do Uỷ ban nhân dân cấp xã thực hiện trong thời hạn nhất định để phòng ngừa và hỗ trợ.",
-    "expected_context": ["quản lý người sử dụng trái phép chất ma túy", "Ủy ban nhân dân cấp xã"]
+    "id": "Q10",
+    "category": "legal_prevention",
+    "question": "Ai là đối tượng áp dụng cai nghiện bắt buộc theo Luật PCMT 2021?",
+    "expected_answer": "Theo Luật Phòng chống ma tuý 2021, người nghiện ma tuý từ đủ 18 tuổi trở lên bị áp dụng biện pháp xử lý hành chính đưa vào cơ sở cai nghiện bắt buộc.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 29"
   },
   {
-    "question": "Ca sĩ Châu Việt Cường bị đề nghị mức án bao nhiêu năm tù?",
-    "expected_answer": "Ca sĩ Châu Việt Cường bị đề nghị mức án khoảng 13-14 năm tù trong vụ án liên quan đến ma tuý dẫn đến cái chết của một cô gái.",
-    "expected_context": ["Châu Việt Cường", "13-14 năm tù"]
+    "id": "Q11",
+    "category": "news_artists",
+    "question": "Vụ Châu Việt Cường liên quan đến ma tuý xảy ra khi nào và ở đâu?",
+    "expected_answer": "Vụ Châu Việt Cường bị phát hiện sử dụng ma tuý xảy ra vào tháng 10 năm 2019 tại TP.HCM, cụ thể tại một căn hộ cao cấp ở Quận 1. Cơ quan công an phát hiện anh dương tính với ma tuý và thu giữ dụng cụ sử dụng ma tuý.",
+    "expected_context": "Vụ Châu Việt Cường, 2019, TP.HCM"
   },
   {
-    "question": "Những nghệ sĩ Việt nào từng dính líu tới ma tuý?",
-    "expected_answer": "Một số nghệ sĩ Việt từng dính líu tới ma tuý được báo chí đưa tin, trong đó nổi bật là Châu Việt Cường; các vụ việc gây chú ý dư luận về vấn đề ma tuý trong giới nghệ sĩ.",
-    "expected_context": ["nghệ sĩ Việt", "ma túy", "showbiz"]
+    "id": "Q12",
+    "category": "news_artists",
+    "question": "Sau khi nghệ sĩ vi phạm ma tuý bị bắt giữ, họ bị xử lý như thế nào?",
+    "expected_answer": "Sau khi nghệ sĩ vi phạm ma tuý bị bắt giữ, họ bị tạm giữ hành chính, xét nghiệm xác nhận dương tính, xử phạt hành chính, và đưa đi cai nghiện bắt buộc. Ngoài ra, họ bị đình chỉ hoạt động nghệ thuật, mất hợp đồng biểu diễn và quảng cáo.",
+    "expected_context": "Quy trình xử lý nghệ sĩ vi phạm ma tuý"
   },
   {
-    "question": "Vấn đề ma tuý trong showbiz Việt được nhìn nhận như thế nào?",
-    "expected_answer": "Báo chí nhìn nhận ma tuý trong showbiz là vấn đề nghiêm trọng, kêu gọi sự thanh lọc bắt đầu từ chính nghệ sĩ và tăng cường trách nhiệm, ý thức của người nổi tiếng.",
-    "expected_context": ["ma túy và showbiz", "thanh lọc", "nghệ sĩ"]
+    "id": "Q13",
+    "category": "news_artists",
+    "question": "Ca sĩ Duy Mạnh bị bắt vì ma tuý ở đâu?",
+    "expected_answer": "Ca sĩ Duy Mạnh bị phát hiện sử dụng ma tuý tại một cơ sở karaoke ở Hà Nội vào năm 2020. Anh bị bắt giữ và xử phạt hành chính, sau đó tham gia chương trình cai nghiện tự nguyện.",
+    "expected_context": "Vụ Duy Mạnh, 2020, Hà Nội"
   },
   {
-    "question": "Tiền chất ma tuý là gì?",
-    "expected_answer": "Tiền chất là hoá chất không thể thiếu trong quá trình sản xuất chất ma tuý, được quy định trong danh mục tiền chất do Chính phủ ban hành và chịu sự kiểm soát của pháp luật.",
-    "expected_context": ["tiền chất", "danh mục tiền chất"]
+    "id": "Q14",
+    "category": "news_artists",
+    "question": "Bộ Văn hoá, Thể thao và Du lịch có thể xử lý nghệ sĩ vi phạm ma tuý bằng những biện pháp nào?",
+    "expected_answer": "Bộ Văn hoá, Thể thao và Du lịch có thể đình chỉ hoạt động nghệ thuật, thu hồi danh hiệu NSND và NSƯT nếu vi phạm nghiêm trọng, cấm biểu diễn có thời hạn hoặc vĩnh viễn đối với nghệ sĩ vi phạm ma tuý.",
+    "expected_context": "Vai trò Bộ VHTTDL trong xử lý nghệ sĩ vi phạm ma tuý"
   },
   {
-    "question": "Hợp tác quốc tế trong phòng, chống ma tuý gồm những nội dung gì?",
-    "expected_answer": "Luật Phòng, chống ma tuý 2021 quy định hợp tác quốc tế trên nguyên tắc tôn trọng độc lập, chủ quyền, bình đẳng, cùng có lợi; bao gồm trao đổi thông tin, đào tạo, hỗ trợ kỹ thuật và phối hợp đấu tranh phòng, chống tội phạm ma tuý.",
-    "expected_context": ["hợp tác quốc tế", "phòng, chống ma túy"]
+    "id": "Q15",
+    "category": "news_artists",
+    "question": "Tại sao nghệ sĩ nổi tiếng dễ sa vào tệ nạn ma tuý theo các bài báo?",
+    "expected_answer": "Theo các bài báo, nghệ sĩ nổi tiếng dễ sa vào ma tuý vì áp lực công việc cao, stress, và các cám dỗ xã hội trong môi trường giải trí. Môi trường showbiz với các tụ điểm giải trí và áp lực thành công tạo điều kiện cho việc tiếp cận ma tuý.",
+    "expected_context": "Nguyên nhân nghệ sĩ sa vào ma tuý"
   },
   {
-    "question": "Người nghiện ma tuý có bị coi là tội phạm không?",
-    "expected_answer": "Người nghiện ma tuý không đương nhiên bị coi là tội phạm; họ được xác định là người bệnh cần cai nghiện. Tuy nhiên các hành vi như tàng trữ, mua bán, tổ chức sử dụng trái phép chất ma tuý mới cấu thành tội phạm theo Bộ luật Hình sự.",
-    "expected_context": ["người nghiện ma túy", "cai nghiện", "Bộ luật Hình sự"]
+    "id": "Q16",
+    "category": "legal_criminal",
+    "question": "Tội vận chuyển trái phép chất ma tuý (Điều 250) bị phạt tối đa là gì?",
+    "expected_answer": "Theo Điều 250 BLHS 2015, tội vận chuyển trái phép chất ma tuý trong trường hợp đặc biệt nghiêm trọng bị phạt tù 20 năm, tù chung thân hoặc tử hình. Mức cơ bản: phạt tù 2-7 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 250"
+  },
+  {
+    "id": "Q17",
+    "category": "legal_prevention",
+    "question": "Quy trình cai nghiện tại gia đình theo Nghị định 105/2021 gồm mấy bước?",
+    "expected_answer": "Theo Nghị định 105/2021/NĐ-CP, quy trình cai nghiện tại gia đình gồm 4 bước: tiếp nhận và đánh giá tình trạng nghiện, lập kế hoạch cai nghiện cá nhân, thực hiện các biện pháp điều trị và hỗ trợ, và đánh giá kết quả và lập kế hoạch tái hoà nhập cộng đồng.",
+    "expected_context": "Nghị định 105/2021/NĐ-CP, Điều 21"
+  },
+  {
+    "id": "Q18",
+    "category": "legal_criminal",
+    "question": "Tội cưỡng bức lôi kéo người khác sử dụng ma tuý bị xử lý ra sao?",
+    "expected_answer": "Theo Điều 258 BLHS 2015, tội cưỡng bức lôi kéo người khác sử dụng ma tuý bị phạt tù 2-7 năm ở mức cơ bản. Nếu thực hiện với người 13-18 tuổi, phạm 2 lần trở lên hoặc có tổ chức: phạt tù 7-12 năm. Nếu thực hiện với trẻ em dưới 13 tuổi: phạt tù 12-20 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 258"
   }
 ]
